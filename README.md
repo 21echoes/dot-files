@@ -5,6 +5,10 @@ dot-files
 
 Various tune-ups to the Mac OS X system defaults
 
+## .things_to_install.md
+
+A list of little tools to make yr compy easier to use
+
 ## .bash_profile
 
 * Terse & colorful command line prompt with git status aware prompt
