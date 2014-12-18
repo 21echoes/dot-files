@@ -1,11 +1,15 @@
 dot-files
 =========
 
+## .mac_defaults
+
+Various tune-ups to the Mac OS X system defaults
+
 ## .bash_profile
 
-terse & colorful command line prompt with git status knowledge
-git status awareness & git auto-complete
-folder bookmarks & jumping on command line
+* Terse & colorful command line prompt with git status aware prompt
+* Git status awareness & git auto-complete
+* Folder bookmarks & jumping on command line
 
 ## .git-prompt.sh
 
