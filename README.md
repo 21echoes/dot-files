@@ -1,7 +1,7 @@
 dot-files
 =========
 
-## .mac_defaults
+## .mac_defaults.sh
 
 Various tune-ups to the Mac OS X system defaults
 
