@@ -13,33 +13,37 @@ end
 hs.pathwatcher.new(os.getenv("HOME") .. "/.hammerspoon/", reloadConfig):start()
 hs.notify.new({title="Hammerspoon", informativeText="Config loaded"}):send()
 
+
+-- Utils
+function dumbFrame(frameToMock)
+  return {
+    x = frameToMock.x,
+    y = frameToMock.y,
+    w = frameToMock.w,
+    h = frameToMock.h
+  }
+end
+
+
 -- Focused window movement
+-- Focused window movement -- Left half
 hs.hotkey.bind({"cmd", "alt"}, "Left", function()
   local win = hs.window.focusedWindow()
-  local f = win:frame()
-  local screen = win:screen()
-  local max = screen:frame()
-
-  f.x = max.x
-  f.y = max.y
-  f.w = max.w / 2
-  f.h = max.h
+  local f = dumbFrame(win:screen():frame())
+  f.w = f.w / 2
   win:setFrame(f)
 end)
 
+-- Focused window movement -- Right half
 hs.hotkey.bind({"cmd", "alt"}, "Right", function()
   local win = hs.window.focusedWindow()
-  local f = win:frame()
-  local screen = win:screen()
-  local max = screen:frame()
-
-  f.x = max.x + (max.w / 2)
-  f.y = max.y
-  f.w = max.w / 2
-  f.h = max.h
+  local f = dumbFrame(win:screen():frame())
+  f.x = f.x + (f.w / 2)
+  f.w = f.w / 2
   win:setFrame(f)
 end)
 
+-- Focused window movement -- Full screen
 hs.hotkey.bind({"cmd", "alt"}, "F", function()
   local win = hs.window.focusedWindow()
   win:setFrame(win:screen():frame())
@@ -60,6 +64,7 @@ appWatcher:start()
 
 
 -- Workspace
+-- Workspace -- Utils
 function placeAppAtFrame(appName, dumbFrame, launchIfNotRunning)
   local app = hs.appfinder.appFromName(appName)
   if not app or not app:isRunning() then
@@ -76,16 +81,9 @@ function placeAppAtFrame(appName, dumbFrame, launchIfNotRunning)
   end
 end
 
-function dumbFrame(frameToMock)
-  return {
-    x = frameToMock.x,
-    y = frameToMock.y,
-    w = frameToMock.w,
-    h = frameToMock.h
-  }
-end
-
-function setupWorkWorkspace()
+-- Workspace -- Work
+-- Workspace -- Work -- Three Screens
+function setupWorkTripleWorkspace()
   local screens = hs.screen.allScreens()
   if ((# screens) == 3) then
     -- laptop
@@ -128,5 +126,34 @@ function setupWorkWorkspace()
     placeAppAtFrame("Firefox", firefoxFrame, true)
   end
 end
-local workWorkspaceScreenWatcher = hs.screen.watcher.new(setupWorkWorkspace)
-workWorkspaceScreenWatcher:start()
+local workWorkspaceTripleScreenWatcher = hs.screen.watcher.new(setupWorkTripleWorkspace)
+workWorkspaceTripleScreenWatcher:start()
+
+-- Workspace -- Work -- One Screen
+function setupWorkSingleWorkspace()
+  local screens = hs.screen.allScreens()
+  if ((# screens) == 1) then
+    -- terminal
+    local terminalApp = hs.appfinder.appFromName("Terminal")
+    local terminalWindows = terminalApp:allWindows()
+    if ((# terminalWindows) <= 0) then
+      hs.eventtap.keyStroke({"alt"}, "Space")
+    end
+    local terminalWindow = terminalApp:focusedWindow()
+    local pinMenuSelector = {"Window", "Pin Visor"}
+    local pinMenuItem = terminalApp:findMenuItem(pinMenuSelector)
+    if (pinMenuItem and pinMenuItem["ticked"]) then
+      terminalApp:selectMenuItem(pinMenuSelector)
+    end
+    hs.eventtap.keyStroke({"alt"}, "Space")
+
+    -- other windows
+    local laptopFrame = dumbFrame(screens[1]:frame())
+    local windows = hs.window.allWindows()
+    for _,window in pairs(windows) do
+      window:setFrame(laptopFrame)
+    end
+  end
+end
+local workWorkspaceSingleScreenWatcher = hs.screen.watcher.new(setupWorkSingleWorkspace)
+workWorkspaceSingleScreenWatcher:start()
