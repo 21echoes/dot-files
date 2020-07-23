@@ -11,6 +11,10 @@ dot-files
 
 A list of little tools to make yr compy easier to use
 
+## settings.json
+
+Settings for VS Code. Install in `~/Library/Application\ Support/Code/User/settings.json`
+
 ## .mac_defaults.sh
 
 Various tune-ups to the Mac OS X system defaults.
