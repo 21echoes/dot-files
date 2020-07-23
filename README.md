@@ -1,24 +1,17 @@
 dot-files
 =========
 
-## .mac_defaults.sh
-
-Various tune-ups to the Mac OS X system defaults
-
-## .things_to_install.md
-
-A list of little tools to make yr compy easier to use
-
-## .bash_profile
+## .zshenv
 
 * Terse & colorful command line prompt with git status aware prompt
 * Git status awareness & git auto-complete
 * Folder bookmarks & jumping on command line
 
-## .git-prompt.sh
+## .things_to_install.md
 
-Command line scripts to have knowledge of current git state. Directly from git team: https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh
+A list of little tools to make yr compy easier to use
 
-## .git-completion.sh
+## .mac_defaults.sh
 
-Bash autocomplete for git branches. Directly from git team: https://github.com/git/git/blob/master/contrib/completion/git-completion.sh
+Various tune-ups to the Mac OS X system defaults.
+(This was written over two years ago, so some of these preferences are likely outdated)
