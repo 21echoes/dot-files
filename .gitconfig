@@ -1,0 +1,18 @@
+[push]
+	default = current
+[user]
+	email = 21echoes@gmail.com
+	name = David Kettler
+[core]
+	excludesfile = /Users/dkettler/.gitignore
+	pager = diff-so-fancy | less --tabs=1,5 -R
+[alias]
+    author = "show -s --format='%an <%ae>'"
+    triage = "!git branch --merged | grep  -v '\\*\\|master\\|develop' | xargs -n 1 git branch -d"
+    plaindiff = "!git --no-pager diff"
+	pushf = "push --force-with-lease"
+	cehckout = "checkout"
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true

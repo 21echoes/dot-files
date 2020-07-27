@@ -14,3 +14,7 @@ Applications & Tools to Install
   * Code editor (use settings.json from this repo)
   * Install Tomorrow_Night_Eighties theme, or Base 16 Dark Eighties
   * https://code.visualstudio.com/
+* diff-so-fancy
+  * Better looking git diffs
+  * Install via homebrew
+  * https://github.com/so-fancy/diff-so-fancy
