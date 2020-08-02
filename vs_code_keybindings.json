@@ -1,0 +1,135 @@
+// Place this at in ~/Library/Application\ Support/Code/User/keybindings.json
+[
+  {
+      "key": "ctrl+cmd+g",
+      "command": "editor.action.selectHighlights",
+      "when": "editorFocus"
+  },
+  {
+      "key": "shift+cmd+l",
+      "command": "-editor.action.selectHighlights",
+      "when": "editorFocus"
+  },
+  {
+      "key": "cmd+t cmd+s",
+      "command": "workbench.action.showAllSymbols"
+  },
+  {
+      "key": "cmd+t",
+      "command": "-workbench.action.showAllSymbols"
+  },
+  {
+      "key": "cmd+t",
+      "command": "workbench.action.quickOpen"
+  },
+  {
+      "key": "cmd+p",
+      "command": "-workbench.action.quickOpen"
+  },
+  {
+      "key": "cmd+t",
+      "command": "workbench.action.quickOpenNavigateNextInFilePicker",
+      "when": "inFilesPicker && inQuickOpen"
+  },
+  {
+      "key": "cmd+p",
+      "command": "-workbench.action.quickOpenNavigateNextInFilePicker",
+      "when": "inFilesPicker && inQuickOpen"
+  },
+  {
+      "key": "shift+cmd+\\",
+      "command": "-editor.action.jumpToBracket",
+      "when": "editorTextFocus"
+  },
+  {
+      "key": "shift+cmd+\\",
+      "command": "revealInExplorer"
+  },
+  {
+      "key": "cmd+\\",
+      "command": "-workbench.action.splitEditor"
+  },
+  {
+      "key": "cmd+\\",
+      "command": "-workbench.action.terminal.split",
+      "when": "terminalFocus"
+  },
+  {
+      "key": "cmd+\\",
+      "command": "workbench.action.toggleSidebarVisibility"
+  },
+  {
+      "key": "cmd+b",
+      "command": "-workbench.action.toggleSidebarVisibility"
+  },
+  {
+      "key": "ctrl+alt+f",
+      "command": "editor.action.formatDocument",
+      "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+      "key": "shift+alt+f",
+      "command": "-editor.action.formatDocument",
+      "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+      "key": "alt+down",
+      "command": "cursorColumnSelectDown",
+      "when": "textInputFocus"
+  },
+  {
+      "key": "shift+alt+cmd+down",
+      "command": "-cursorColumnSelectDown",
+      "when": "textInputFocus"
+  },
+  {
+      "key": "shift+alt+cmd+left",
+      "command": "-cursorColumnSelectLeft",
+      "when": "textInputFocus"
+  },
+  {
+      "key": "alt+up",
+      "command": "cursorColumnSelectUp",
+      "when": "textInputFocus"
+  },
+  {
+      "key": "shift+alt+cmd+up",
+      "command": "-cursorColumnSelectUp",
+      "when": "textInputFocus"
+  },
+  {
+      "key": "shift+alt+cmd+right",
+      "command": "-cursorColumnSelectRight",
+      "when": "textInputFocus"
+  },
+  {
+      "key": "alt+down",
+      "command": "-editor.action.moveLinesDownAction",
+      "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+      "key": "alt+down",
+      "command": "-markdown.extension.onMoveLineDown",
+      "when": "editorTextFocus && !editorReadonly && !suggestWidgetVisible && editorLangId == 'markdown'"
+  },
+  {
+      "key": "ctrl+shift+e",
+      "command": "cursorEndSelect",
+      "when": "textInputFocus"
+  },
+  {
+      "key": "shift+cmd+right",
+      "command": "-cursorEndSelect",
+      "when": "textInputFocus"
+  },
+  {
+      "key": "ctrl+shift+a",
+      "command": "cursorHomeSelect",
+      "when": "textInputFocus"
+  },
+  {
+      "key": "shift+cmd+left",
+      "command": "-cursorHomeSelect",
+      "when": "textInputFocus"
+  }
+]
