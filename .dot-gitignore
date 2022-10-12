@@ -1,2 +1,2 @@
-# Rename this file to .gitignore
+# Place this at ~/.gitignore
 .DS_Store

@@ -18,3 +18,6 @@ Applications & Tools to Install
   * Better looking git diffs
   * Install via homebrew
   * https://github.com/so-fancy/diff-so-fancy
+* volta
+  * node version management
+  * https://volta.sh/
